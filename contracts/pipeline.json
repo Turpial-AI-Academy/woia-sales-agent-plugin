@@ -1,0 +1,30 @@
+{
+  "$schema": "./capability-contract.schema.json",
+  "id": "pipeline/v1",
+  "contract_version": "0.5.0",
+  "capability": "sales.pipeline",
+  "purpose": "Read or update bounded Sales pipeline/customer state in the shared system of record with explicit transition rationale and concurrency/effect evidence.",
+  "inputs": [
+    "customer/lead ref",
+    "current pipeline state/revision",
+    "approved next state/owner/next action"
+  ],
+  "outputs": [
+    "pipeline state evidence and resulting shared customer-data reference"
+  ],
+  "gate": [
+    "Pipeline mutation is authorized, bounded, based on current state, protected from stale writes when supported, and the resulting source-of-truth state is confirmed or explicitly unknown."
+  ],
+  "effect_classes": [
+    "read",
+    "external-write"
+  ],
+  "provider_plugin": {
+    "name": "woia-sales-pipeline",
+    "skill": "sales-pipeline",
+    "marketplace": "woia-marketplace-sales"
+  },
+  "human_review_triggers": [
+    "stage/owner changes requiring organization approval"
+  ]
+}

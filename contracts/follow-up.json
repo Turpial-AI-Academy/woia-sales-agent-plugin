@@ -1,0 +1,32 @@
+{
+  "$schema": "./capability-contract.schema.json",
+  "id": "follow-up/v1",
+  "contract_version": "0.5.0",
+  "capability": "sales.follow-up",
+  "purpose": "Plan and perform authorized lead/customer follow-up through an available communication channel with timing, message, consent, identity and outcome evidence.",
+  "inputs": [
+    "customer/lead ref",
+    "qualification/context",
+    "authorized channel/contact fields",
+    "follow-up objective and constraints"
+  ],
+  "outputs": [
+    "follow-up plan and/or communication effect evidence with next action"
+  ],
+  "gate": [
+    "Any outbound contact used the exact authorized recipient/channel/message scope, resulting effect is confirmed or explicitly unknown, and next action is recorded."
+  ],
+  "effect_classes": [
+    "communication"
+  ],
+  "provider_plugin": {
+    "name": "woia-sales-follow-up",
+    "skill": "sales-follow-up",
+    "marketplace": "woia-marketplace-sales"
+  },
+  "human_review_triggers": [
+    "first outbound contact when policy requires approval",
+    "bulk/mass contact",
+    "regulated/sensitive communication"
+  ]
+}

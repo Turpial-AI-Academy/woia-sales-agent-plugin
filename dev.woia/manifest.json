@@ -1,0 +1,28 @@
+{
+  "schema": "dev.woia.department-orchestrator/v1",
+  "version": "0.5.0",
+  "authoring_profile": "thin",
+  "department": "sales",
+  "execution_model": "opea-h",
+  "requires_plugins": [
+    {
+      "name": "woia-core",
+      "minimum_version": "0.5.0"
+    }
+  ],
+  "capability_registry": "registry/capabilities.json",
+  "routing_registry": "registry/routing.json",
+  "shared_resources": [
+    {
+      "plugin": "woia-customer-data",
+      "usage": "required-when-customer-state-is-needed"
+    }
+  ],
+  "communication": [
+    {
+      "plugin": "woia-chatgpt-project-bridge",
+      "usage": "conditional",
+      "reason": "Cross-department Task request/response"
+    }
+  ]
+}

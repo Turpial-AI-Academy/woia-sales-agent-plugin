@@ -1,0 +1,53 @@
+{
+  "schema": "dev.woia.department-routing/v1",
+  "version": "0.5.0",
+  "department": "sales",
+  "rules": [
+    {
+      "key": "qualification",
+      "when": "lead fit/need/urgency/constraints/routing must be established",
+      "capabilities": [
+        "sales.lead-qualification"
+      ],
+      "opea_roles": [
+        "planning",
+        "execution",
+        "audit"
+      ]
+    },
+    {
+      "key": "follow-up",
+      "when": "an authorized outbound follow-up or next-contact plan is required",
+      "capabilities": [
+        "sales.follow-up"
+      ],
+      "opea_roles": [
+        "planning",
+        "execution",
+        "audit",
+        "human-review"
+      ]
+    },
+    {
+      "key": "pipeline-change",
+      "when": "lead/customer stage, owner, status, next action or related sales state must change",
+      "capabilities": [
+        "sales.pipeline"
+      ],
+      "opea_roles": [
+        "execution",
+        "audit"
+      ]
+    }
+  ],
+  "shared_resources": [
+    {
+      "plugin": "woia-customer-data",
+      "trigger": "customer/lead record state must be read or updated"
+    },
+    {
+      "plugin": "woia-chatgpt-project-bridge",
+      "trigger": "another department requests Sales work or Sales must return a correlated result"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "dev.woia.department-capability-registry/v1",
+  "version": "0.5.0",
+  "department": "sales",
+  "capabilities": [
+    {
+      "id": "sales.lead-qualification",
+      "contract": "lead-qualification/v1",
+      "provider": {
+        "plugin": "woia-sales-lead-qualification",
+        "skill": "sales-lead-qualification",
+        "marketplace": "woia-marketplace-sales"
+      },
+      "effects": [
+        "read"
+      ],
+      "typical_roles": [
+        "planner",
+        "executor",
+        "auditor"
+      ]
+    },
+    {
+      "id": "sales.follow-up",
+      "contract": "follow-up/v1",
+      "provider": {
+        "plugin": "woia-sales-follow-up",
+        "skill": "sales-follow-up",
+        "marketplace": "woia-marketplace-sales"
+      },
+      "effects": [
+        "communication"
+      ],
+      "typical_roles": [
+        "planner",
+        "executor",
+        "auditor"
+      ]
+    },
+    {
+      "id": "sales.pipeline",
+      "contract": "pipeline/v1",
+      "provider": {
+        "plugin": "woia-sales-pipeline",
+        "skill": "sales-pipeline",
+        "marketplace": "woia-marketplace-sales"
+      },
+      "effects": [
+        "read",
+        "external-write"
+      ],
+      "typical_roles": [
+        "executor",
+        "auditor"
+      ]
+    }
+  ]
+}

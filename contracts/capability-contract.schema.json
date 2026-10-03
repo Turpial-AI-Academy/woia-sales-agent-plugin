@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://woia.dev/schemas/sales/v0.5.0/capability-contract.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "id",
+    "contract_version",
+    "capability",
+    "purpose",
+    "inputs",
+    "outputs",
+    "gate",
+    "effect_classes",
+    "provider_plugin",
+    "human_review_triggers"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./capability-contract.schema.json"
+    },
+    "id": {
+      "type": "string"
+    },
+    "contract_version": {
+      "const": "0.5.0"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "gate": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "effect_classes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "none",
+          "read",
+          "local-write",
+          "external-write",
+          "communication",
+          "publication",
+          "financial",
+          "security-sensitive",
+          "physical"
+        ]
+      }
+    },
+    "provider_plugin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "skill",
+        "marketplace"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "skill": {
+          "type": "string"
+        },
+        "marketplace": {
+          "const": "woia-marketplace-sales"
+        }
+      }
+    },
+    "human_review_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

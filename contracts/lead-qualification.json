@@ -1,0 +1,29 @@
+{
+  "$schema": "./capability-contract.schema.json",
+  "id": "lead-qualification/v1",
+  "contract_version": "0.5.0",
+  "capability": "sales.lead-qualification",
+  "purpose": "Establish evidence-backed lead fit, need, constraints, timing, urgency and routing without inventing customer facts.",
+  "inputs": [
+    "lead/customer reference and authorized minimum fields",
+    "inbound intent/context",
+    "organization qualification criteria/project overlays"
+  ],
+  "outputs": [
+    "qualification evidence and recommended next action/routing"
+  ],
+  "gate": [
+    "Qualification facts are traceable to source/customer statements, inference is labeled, required unknowns remain explicit, and no unsupported score/status is presented as fact."
+  ],
+  "effect_classes": [
+    "read"
+  ],
+  "provider_plugin": {
+    "name": "woia-sales-lead-qualification",
+    "skill": "sales-lead-qualification",
+    "marketplace": "woia-marketplace-sales"
+  },
+  "human_review_triggers": [
+    "sensitive/high-value routing when organization policy requires it"
+  ]
+}
