@@ -1,13 +1,13 @@
 {
   "schema": "dev.woia.department-orchestrator/v1",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "authoring_profile": "thin",
   "department": "sales",
   "execution_model": "opea-h",
   "requires_plugins": [
     {
       "name": "woia-core",
-      "minimum_version": "0.5.0"
+      "minimum_version": "0.5.3"
     }
   ],
   "capability_registry": "registry/capabilities.json",
@@ -15,7 +15,7 @@
   "shared_resources": [
     {
       "plugin": "woia-customer-data",
-      "usage": "required-when-customer-state-is-needed"
+      "usage": "optional-organization-CRM-adapter"
     }
   ],
   "communication": [
@@ -24,5 +24,6 @@
       "usage": "conditional",
       "reason": "Cross-department Task request/response"
     }
-  ]
+  ],
+  "real_estate_method": "contracts/real-estate-routing.json"
 }
