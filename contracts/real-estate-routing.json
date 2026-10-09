@@ -1,11 +1,11 @@
 {
   "schema": "dev.woia.sales.real-estate-routing/v1",
-  "version": "0.5.1",
+  "version": "0.5.6",
   "assembly": "real-estate",
   "source_authority": "organization Source Authority Map; accepted, scoped, current source references",
   "hard_dependency": {
     "plugin": "woia-core",
-    "minimum_version": "0.5.3"
+    "minimum_version": "0.5.6"
   },
   "identity": "woia-identity",
   "crm": "optional organization-selected woia-customer-data adapter",

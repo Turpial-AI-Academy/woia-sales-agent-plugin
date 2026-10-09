@@ -1,6 +1,6 @@
 {
   "schema": "dev.woia.department-routing/v1",
-  "version": "0.5.1",
+  "version": "0.5.6",
   "department": "sales",
   "rules": [
     {
