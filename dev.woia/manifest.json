@@ -1,13 +1,13 @@
 {
   "schema": "dev.woia.department-orchestrator/v1",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "authoring_profile": "thin",
   "department": "sales",
   "execution_model": "opea-h",
   "requires_plugins": [
     {
       "name": "woia-core",
-      "minimum_version": "0.5.7"
+      "minimum_version": "0.5.8"
     }
   ],
   "capability_registry": "registry/capabilities.json",
@@ -25,5 +25,11 @@
       "reason": "Cross-department Task request/response"
     }
   ],
-  "real_estate_method": "contracts/real-estate-routing.json"
+  "methodology_contract": "contracts/methodology-extension.json",
+  "exported_slots": [
+    "subject-resolution", "qualification-policy", "follow-up-policy",
+    "pipeline-transition-policy", "business-outcome-evidence"
+  ],
+  "allowed_delta_operations": ["ADD", "SPECIALIZE", "NARROW"],
+  "inherited_gates": ["base-conformance", "delta-semantics", "authority-narrowing", "provider-closure", "update-recovery"]
 }

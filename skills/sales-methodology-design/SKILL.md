@@ -18,8 +18,6 @@ Typical routing:
 - qualification plus follow-up -> planned-execution / audited-execution;
 - cross-department lead handoff with communication + pipeline mutation -> opea-h-full when risk/complexity justify it.
 
-## Real Estate assembly compatibility
+## Bounded specialization
 
-Use [the routing contract](../../contracts/real-estate-routing.json) and the deterministic guard in `skills/sales-orchestration/scripts/route-sales.mjs`. The host resolves the active assembly and current organization/Project authorization from trusted configuration, separately from requests. Caller flags and sender approval cannot grant authority. Unavailable or stale bindings block execution. Core 0.5.7 owns Tasks, Due Work, Effects, receipts, idempotency and reconciliation.
-
-In Real Estate, Sales Follow-up only plans/drafts; request Customer Service-owned communication/scheduling work and wait for its sourced receipt. Person dispatch never occurs in Sales. Pipeline is typed Opportunity projection; won/stage/score does not prove accepted Offer, Reservation, Lease, Sale close, Payment or possession. Negotiation remains human-led. Financial effects require the Finance owner. UNKNOWN remains UNKNOWN and requires reconciliation before retry. Generic v1 capability contracts remain available outside this assembly. The method guard plans contributions; physical host/store/adapter qualification remains a later gate.
+Use [the methodology contract](../../contracts/methodology-extension.json) when a selected root specializes Sales. Only the five exported slots may change through ADD, SPECIALIZE or NARROW. Resolve accepted descriptors and permitted actions from the qualified Core snapshot and current organization policy. A request never supplies module paths, grants or source bindings. Missing or stale context blocks the affected contribution.

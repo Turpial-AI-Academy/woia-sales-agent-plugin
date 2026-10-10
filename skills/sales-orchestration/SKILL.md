@@ -18,8 +18,8 @@ Use WOIA Core for Task/runtime mechanics and this skill for Sales routing.
 
 Never let a sender department edit this Sales Task directly, and never inherit sender authority.
 
-## Real Estate assembly compatibility
+## Current method and authority
 
-Use [the routing contract](../../contracts/real-estate-routing.json) and the deterministic guard in `skills/sales-orchestration/scripts/route-sales.mjs`. The host resolves the active assembly and current organization/Project authorization from trusted configuration, separately from requests. Caller flags and sender approval cannot grant authority. Unavailable or stale bindings block execution. Core 0.5.7 owns Tasks, Due Work, Effects, receipts, idempotency and reconciliation.
+Read [the methodology contract](../../contracts/methodology-extension.json) before routing or applying a specialization. Use `routeSales(request, host)` from `scripts/route-sales.mjs` with host-resolved current scope, source map, policy and exact provider readiness. The host intersects allowed method actions with organization grants; request flags cannot select policy, modules or bindings.
 
-In Real Estate, Sales Follow-up only plans/drafts; request Customer Service-owned communication/scheduling work and wait for its sourced receipt. Person dispatch never occurs in Sales. Pipeline is typed Opportunity projection; won/stage/score does not prove accepted Offer, Reservation, Lease, Sale close, Payment or possession. Negotiation remains human-led. Financial effects require the Finance owner. UNKNOWN remains UNKNOWN and requires reconciliation before retry. Generic v1 capability contracts remain available outside this assembly. The method guard plans contributions; physical host/store/adapter qualification remains a later gate.
+For a specialized root, Core supplies the exact qualified base/delta/provider snapshot and its admitted descriptors. Preserve the five exported slots and inherited gates. The guard returns a contribution proposal; it performs no write or communication. A pipeline stage or score never accepts separately owned business facts. Preserve unknown effects and obtain their owner reconciliation before retry.

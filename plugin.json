@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "woia-sales",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "WOIA Sales department orchestrator: OPEA-H routing for lead qualification, follow-up, pipeline updates, shared customer data, and cross-department handoffs.",
   "author": {
     "name": "Turpial AI Academy",

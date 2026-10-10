@@ -1,0 +1,14 @@
+{
+  "schema": "dev.woia.sales-methodology/v1",
+  "department": "sales",
+  "exported_slots": ["subject-resolution", "qualification-policy", "follow-up-policy", "pipeline-transition-policy", "business-outcome-evidence"],
+  "allowed_delta_operations": ["ADD", "SPECIALIZE", "NARROW"],
+  "inherited_gates": ["base-conformance", "delta-semantics", "authority-narrowing", "provider-closure", "update-recovery"],
+  "actions": {
+    "qualification": ["qualification.evaluate"],
+    "follow-up": ["follow-up.plan", "follow-up.draft", "follow-up.send"],
+    "pipeline-change": ["pipeline.propose"]
+  },
+  "host_boundary": "The authenticated host resolves scope, current authority, accepted source map and permitted actions. Specialization contributions come from the exact qualified Core snapshot; requests cannot select modules or change policies.",
+  "effect_boundary": "Routing prepares an owner contribution. Core owns Tasks, Effects, receipts, recovery and idempotency; providers preserve their source ownership and write boundaries."
+}
